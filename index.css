@@ -1,0 +1,9 @@
+.intro-text{
+    margin-bottom: 35px;
+}
+.intro-text-box{
+    text-align: center;
+    border: 3px solid #68647db4;
+    border-radius: 20px;
+    height: 580px;
+}
