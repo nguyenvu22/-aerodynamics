@@ -607,7 +607,7 @@ ol {
 	font-size: 15px;
 	font-weight: 500;
 	color: #68647d;
-	margin-bottom: 35px;
+	margin-bottom: 20px;
 }
 
 .text-box .read-more {
@@ -1048,7 +1048,7 @@ ol {
 }
 
 .copyright a {
-	color: #9190a5;
+	color: #9190a536;
 }
 
 .copyright a:hover {
