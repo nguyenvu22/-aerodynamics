@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>EndGam - Gaming Magazine Template</title>
+	<title>Caculate for Inviscid</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="EndGam Gaming Magazine Template">
 	<meta name="keywords" content="endGam,gGaming, magazine, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon
-	<link href="img/favicon.ico" rel="shortcut icon"/> -->
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="./img/icons/favicon.png"/>
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="css/bootstrap.min.css"/>
@@ -34,6 +33,7 @@
 	<div id="preloder">
 		<div class="loader"></div>
 	</div>
+
 
 	<!-- Header section -->
 	<header class="header-section">
@@ -81,25 +81,29 @@
 	<section id="body" class="intro-section">
 		<div class="container">
 			<div class="row">
+				<!-- Case 1 : Insentropic Flow -->
 				<div class="intro-text col-md-4">
 					<div class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
 							Insentropic Flow
 						</h3>
-						<!-- Input 1 -->
+						<!-- Input param 1 -->
 						<p>
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_1-1"><br>
+							<!-- validation (error) -->
 							<span style="color: red; display: none;" id="valid_1-1">-- Invalid --</span>
 						</p>
-						<!-- Input 2 -->
+						<!-- Input param 2 -->
 						<p>
 							<img src="./img/M.png" alt=""> = <input type="text" id="param_1-2"><br>
+							<!-- validation (error) -->
 							<span style="color: red; display: none;" id="valid_1-2">-- Invalid --</span>
 						</p>
 
 						<button onclick="formular_1()" class="btn btn-success"> Calculate </button>
 
 						<p style="margin: 28px 0px 0px 50px; text-align: left;">
+							<!-- Answer -->
 							<img style="width: 12%;" src="./img/answer_1-1.png" alt=""> = <span id="answer_formular_1-1"> __________ </span>
 						</p>
 						<p style="margin: 28px 0px 0px 50px; text-align: left;">
@@ -111,6 +115,7 @@
 					</div>
 				</div>
 
+				<!-- Case 2 : Noninsentropic Flow -->
 				<div class="intro-text col-md-4">
 					<div class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
@@ -150,6 +155,7 @@
 					</div>
 				</div>
 
+				<!-- Case 3 : Pitot tube -->
 				<div class="intro-text col-md-4">
 					<div class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
@@ -175,6 +181,7 @@
 					</div>
 				</div>
 
+				<!-- Case 4 : Oblique Shock Waves -->
 				<div class="intro-text col-md-4">
 					<div style="height: 750px;" class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
@@ -218,6 +225,7 @@
 					</div>
 				</div>
 				
+				<!-- Case 5 : Expansion Wave -->
 				<div class="intro-text col-md-4">
 					<div style="height: 700px;" class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
@@ -297,7 +305,7 @@
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/main.js"></script>
 	
-	<!--====== FORMULAR ======-->
+	<!--====== Formular ======-->
 	<script src="./js/calculate.js"></script>
 
 	</body>
