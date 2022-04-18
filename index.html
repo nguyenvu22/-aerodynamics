@@ -91,13 +91,13 @@
 						<p>
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_1-1"><br>
 							<!-- validation (error) -->
-							<span style="color: red; display: none;" id="valid_1-1">-- Invalid --</span>
+							<span class="validationn" id="valid_1-1">-- Invalid --</span>
 						</p>
 						<!-- Input param 2 -->
 						<p>
 							<img src="./img/M.png" alt=""> = <input type="text" id="param_1-2"><br>
 							<!-- validation (error) -->
-							<span style="color: red; display: none;" id="valid_1-2">-- Invalid --</span>
+							<span class="validationn" id="valid_1-2">-- Invalid --</span>
 						</p>
 
 						<button onclick="formular_1()" class="btn btn-success"> Calculate </button>
@@ -122,34 +122,34 @@
 							Noninsentropic Flow
 						</h3>
 						<p>
-							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_2-1">
-							<span style="color: red; display: none;" id="valid_2-1">-- Invalid --</span>
+							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_2-1"><br>
+							<span class="validationn" id="valid_2-1">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/M1.png" alt=""> = <input type="text" id="param_2-2">
-							<span style="color: red; display: none;" id="valid_2-2">-- Invalid --</span>
+							<img src="./img/M1.png" alt=""> = <input type="text" id="param_2-2"><br>
+							<span class="validationn" id="valid_2-2">-- Invalid --</span>
 						</p>
 
 						<button onclick="formular_2()" class="btn btn-success"> Calculate </button>
 
 						<div style="padding: 0px 15px; margin-top: 40px;" class="row">
 							<p class="col-6">
-								<img style="width: 25%;" src="./img/M2.png" alt=""> = <span id="answer_formular_2-1"> __________ </span>
+								<img style="width: 25%;" src="./img/M2.png" alt=""> = <span id="answer_formular_2-1"> _______ </span>
 							</p>
 							<p class="col-6">
-								<img style="width: 25%;" src="./img/answer_2-1.png" alt=""> = <span id="answer_formular_2-2"> __________ </span>
+								<img style="width: 25%;" src="./img/answer_2-1.png" alt=""> = <span id="answer_formular_2-2"> _______ </span>
 							</p>					
 							<p class="col-6">
-								<img style="width: 25%;" src="./img/answer_2-2.png" alt=""> = <span id="answer_formular_2-3"> __________ </span>
+								<img style="width: 25%;" src="./img/answer_2-2.png" alt=""> = <span id="answer_formular_2-3"> _______ </span>
 							</p>
 							<p class="col-6">
-								<img style="width: 25%;" src="./img/answer_2-3.png" alt=""> = <span id="answer_formular_2-4"> __________ </span>
+								<img style="width: 25%;" src="./img/answer_2-3.png" alt=""> = <span id="answer_formular_2-4"> _______ </span>
 							</p>					
 							<p class="col-6">
-								<img style="width: 30%;" src="./img/answer_2-4.png" alt=""> = <span id="answer_formular_2-5"> __________ </span>
+								<img style="width: 30%;" src="./img/answer_2-4.png" alt=""> = <span id="answer_formular_2-5"> _______ </span>
 							</p>
 							<p class="col-6">
-								<img style="width: 30%;" src="./img/answer_3-1.png" alt=""> = <span id="answer_formular_2-6"> __________ </span>
+								<img style="width: 30%;" src="./img/answer_3-1.png" alt=""> = <span id="answer_formular_2-6"> _______ </span>
 							</p>
 						</div>
 					</div>
@@ -162,20 +162,21 @@
 							Pitot tube
 						</h3>
 						<p>
-							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_3-1">
-							<span style="color: red; display: none;" id="valid_3-1">-- Invalid --</span>
+							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_3-1"><br>
+							<span class="validationn" id="valid_3-1">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/M.png" alt=""> = <input type="text" id="param_3-2">
-							<span style="color: red; display: none;" id="valid_3-2">-- Invalid --</span>
+							<img src="./img/M.png" alt=""> = <input type="text" id="param_3-2"><br>
+							<span class="validationn" id="valid_3-2">-- Invalid --</span>
 						</p>
 						<button onclick="formular_3()" class="btn btn-success"> Calculate </button>
 						<!-- M < 1 -->
 						<h6 style="color: yellow; display: none;" id="case_3-1"><br> Subsonic</h6>
-
+						
+						<!-- M >= 1 -->
 						<h6 style="color: yellow; display: none;" id="case_3-2"><br> Supersonic</h6>
 
-						<p style="margin: 28px 0px 0px 50px; text-align: left;">
+						<p style="margin: 90px 0px 0px 50px; text-align: left;">
 							<img style="width: 25%;" src="./img/answer_3-1.png" alt=""> = <span id="answer_formular_3"> __________ </span>
 						</p>
 					</div>
@@ -188,16 +189,16 @@
 							Oblique Shock Waves
 						</h3>
 						<p>
-							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_4-1">
-							<span style="color: red; display: none;" id="valid_4-1">-- Invalid --</span>
+							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_4-1"><br>
+							<span class="validationn" id="valid_4-1">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/M1.png" alt=""> = <input type="text" id="param_4-2">
-							<span style="color: red; display: none;" id="valid_4-2">-- Invalid --</span>
+							<img src="./img/M1.png" alt=""> = <input type="text" id="param_4-2"><br>
+							<span class="validationn" id="valid_4-2">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_4-3">
-							<span style="color: red; display: none;" id="valid_4-3">-- Invalid --</span>
+							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_4-3"><br>
+							<span class="validationn" id="valid_4-3">-- Invalid --</span>
 						</p>
 						
 						<button onclick="formular_4()" class="btn btn-success"> Calculate </button>
@@ -227,34 +228,45 @@
 				
 				<!-- Case 5 : Expansion Wave -->
 				<div class="intro-text col-md-4">
-					<div style="height: 700px;" class="intro-text-box text-box text-white">
+					<div style="height: 730px;" class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
 							Expansion Wave
 						</h3>
 						<p>
-							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_5-1">
-							<span style="color: red; display: none;" id="valid_3-1">-- Invalid --</span>
+							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_5-1"><br>
+							<span class="validationn" id="valid_5-1">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/M1.png" alt=""> = <input type="text" id="param_5-2">
-							<span style="color: red; display: none;" id="valid_3-2">-- Invalid --</span>
+							<img src="./img/M1.png" alt=""> = <input type="text" id="param_5-2"><br>
+							<span class="validationn" id="valid_5-2">-- Invalid --</span>
 						</p>
 						<p>
-							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_5-3">
-							<span style="color: red; display: none;" id="valid_3-2">-- Invalid --</span>
+							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_5-3"><br>
+							<span class="validationn" id="valid_5-3">-- Invalid --</span>
 						</p>
 
 						<button onclick="formular_5()" class="btn btn-success"> Calculate </button>
 
-						<p style="margin: 28px 0px 0px 50px; text-align: left;">
-							<img style="width: 25%;" src="./img/U1.png" alt=""> = <span id="answer_formular_3"> __________ </span>
-						</p>
-						<p style="margin: 28px 0px 0px 50px; text-align: left;">
-							<img style="width: 25%;" src="./img/V1.png" alt=""> = <span id="answer_formular_3"> __________ </span>
-						</p>
-						<p style="margin: 28px 0px 0px 50px; text-align: left;">
-							<img style="width: 25%;" src="./img/V2.png" alt=""> = <span id="answer_formular_3"> __________ </span>
-						</p>
+						<div style="padding: 0px 15px; margin-top: 40px;" class="row">
+							<p class="col-6">
+								<img style="width: 25%;" src="./img/U1.png" alt=""> = <span id="answer_formular_5-1"> __________ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 25%;" src="./img/M2.png" alt=""> = <span id="answer_formular_5-2"> __________ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 40%;" src="./img/V1.png" alt=""> = <span id="answer_formular_5-3"> __________ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 40%;" src="./img/V2.png" alt=""> = <span id="answer_formular_5-4"> __________ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 30%;" src="./img/answer_2-2.png" alt=""> = <span id="answer_formular_5-5"> __________ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 30%;" src="./img/answer_2-3.png" alt=""> = <span id="answer_formular_5-6"> __________ </span>
+							</p>
+						</div>
 					</div>
 				</div>
 				
@@ -282,7 +294,7 @@
 						<li><a>Huỳnh Văn Tôn - 1912238</a></li>
 					</ul>
 				</li>
-				<li><a href="https://www.facebook.com/huynhvanton0610">Contact</a></li>
+				<li><a href="https://www.facebook.com/profile.php?id=100007468685879">Contact</a></li>
 			</ul>
 			<div class="footer-social d-flex justify-content-center">
 				<a href="https://www.pinterest.com/"><i class="fa fa-pinterest"></i></a>

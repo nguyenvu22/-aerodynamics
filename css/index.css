@@ -12,3 +12,11 @@
     height: 640px;
 }
 
+.validationn{
+    font-weight: 300;
+    color: rgba(255, 47, 0, 0.962) !important;
+    display: none;
+    text-align: left;
+    margin-left: 35%;
+}
+
