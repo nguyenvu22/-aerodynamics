@@ -169,7 +169,7 @@ function formular_4(){
         
         var answer_6 = (1 + ((param1-1)/2)*param2*param2);
         
-        document.getElementById("answer_formular_4-1").innerHTML = answer_1.toFixed(3);
+        document.getElementById("answer_formular_4-1").innerHTML = answer_1.toFixed(3) + "&deg";
         document.getElementById("answer_formular_4-2").innerHTML = answer_2.toFixed(3);
         document.getElementById("answer_formular_4-3").innerHTML = answer_3.toFixed(3);
         document.getElementById("answer_formular_4-4").innerHTML = answer_4.toFixed(3);
@@ -187,14 +187,19 @@ function formular_4(){
 }
 
 function calcNewM2(oldM2, theta, vM1, Y){
+    console.log("=====Calc new M2=====")
     let newM2;
-
+    
     let derivativeM2 = (1/oldM2) * ((Math.sqrt(oldM2*oldM2-1)) / (1+oldM2*oldM2*((Y-1)/2)));
-
-    let vM2 = Math.sqrt((Y+1)/(Y-1)) * Math.atan( Math.sqrt(((Y-1)/(Y+1))*(oldM2*oldM2-1)) ) - Math.atan(Math.sqrt(oldM2*oldM2-1))
-
-    newM2 = oldM2 + ((theta + vM1 - vM2) / (derivativeM2));
-
+    console.log("derivativeM2 : " + derivativeM2)
+    
+    let vM2 = (Math.sqrt( (Y+1)/(Y-1) ) * Math.atan( Math.sqrt( ((Y-1)/(Y+1)) *(oldM2*oldM2-1)) )) - Math.atan(Math.sqrt(oldM2*oldM2-1));
+    console.log("vM2 : " + vM2)
+    
+    newM2 = oldM2 + ((theta*Math.PI/180 + vM1 - vM2) / (derivativeM2));
+    console.log("new M2 : " + newM2)
+    
+    console.log("=====End new M2=====")
     return newM2;
 }
 
@@ -221,31 +226,57 @@ function formular_5(){
         document.getElementById("valid_5-3").style.display = "none";
     }
 
-    // if(param1 > 1 && param1 <= 2 && param2 > 1 && param3 > 0 && param3 < 90){
-        var u1 = Math.asin(param2);
+    if(param1 > 1 && param1 <= 2 && param2 > 1 && param3 > 0 && param3 < 90){
+        var u1 = Math.asin(1/param2) * 180/Math.PI;
 
-        var vM1 = Math.sqrt((param1+1)/(param1-1)) * Math.atan( Math.sqrt(((param1-1)/(param1+1))*(param2*param2-1)) ) - Math.atan(Math.sqrt(param2*param2-1));
+        var vM1 = (Math.sqrt((param1+1)/(param1-1)) * Math.atan( Math.sqrt(((param1-1)/(param1+1)) * (param2*param2-1)) )) - Math.atan(Math.sqrt(param2*param2-1));
+        console.log("vM1 : " + vM1)
 
-        var vM2 = param3 + vM1;
+        var vM2 = param3*Math.PI/180 + vM1;
 
-        var m2 = param2 + 0.1;
+        //--------------------------------------------------------------------
+        var m2 = param2 + 0.1;      //Assume
 
-        // var m2_latest = calcNewM2(m2, param3, vM1, param1);
+        var m2_previous = m2;
+        console.log("m2_prev : " + m2_previous);
+        var m2_after = calcNewM2(m2_previous, param3, vM1, param1);
+        console.log("m2_after : " + m2_after);
 
-        // do{
-        //     var compare = (Math.abs(m2_latest - m2)) / m2;
-        // }while(compare > 0.05);
+        do{
+            var compare = Math.abs(m2_after - m2_previous);
+            if(compare > 0.05){
+                m2_previous = m2_after;
+                console.log(m2_previous)
+                m2_after = calcNewM2(m2_previous, param3, vM1, param1)
+                console.log(m2_after)
+                console.log("---------------------------")
+            }
+        }while(compare > 0.05);
 
-        var answer_5 = Math.pow((1+param2*param2*((param1-1)/2)) / ((1+param2*param2*((m2_latest-1)/2))), (param1/(param1-1)));
-        var answer_6 = (1+param2*param2*((param1-1)/2)) / ((1+param2*param2*((m2_latest-1)/2)));
+        console.log("2nd :" + m2_after)
 
-        document.getElementById("answer_formular_5-1").innerHTML = "ngu";
-        document.getElementById("answer_formular_5-2").innerHTML = m2_latest.toFixed(3);
-        document.getElementById("answer_formular_5-3").innerHTML = vM1.toFixed(3);
-        document.getElementById("answer_formular_5-4").innerHTML = vM2.toFixed(3);
-        // document.getElementById("answer_formular_5-5").innerHTML = answer_5.toFixed(3);
-        // document.getElementById("answer_formular_5-6").innerHTML = answer_6.toFixed(3);
-    // }
+        var u2 = Math.asin(1/m2_after) * 180/Math.PI;
+        //--------------------------------------------------------------------
+
+        var answer_5 = Math.pow((1+param2*param2*((param1-1)/2)) / ((1+m2_after*m2_after*((param1-1)/2))), (param1/(param1-1)));
+        var answer_6 = (1+param2*param2*((param1-1)/2)) / ((1+m2_after*m2_after*((param1-1)/2)));
+
+        document.getElementById("answer_formular_5-1").innerHTML = u1.toFixed(2) + "&deg";
+        document.getElementById("answer_formular_5-2").innerHTML = u2.toFixed(2) + "&deg";
+        document.getElementById("answer_formular_5-3").innerHTML = vM1.toFixed(3) + " radians";
+        document.getElementById("answer_formular_5-4").innerHTML = vM2.toFixed(3) + " radians";
+        document.getElementById("answer_formular_5-5").innerHTML = answer_5.toFixed(3);
+        document.getElementById("answer_formular_5-6").innerHTML = answer_6.toFixed(3);
+        document.getElementById("answer_formular_5-7").innerHTML = m2_after.toFixed(3);
+    }else{
+        document.getElementById("answer_formular_5-1").innerHTML = "_______";
+        document.getElementById("answer_formular_5-2").innerHTML = "_______";
+        document.getElementById("answer_formular_5-3").innerHTML = "______________";
+        document.getElementById("answer_formular_5-4").innerHTML = "______________";
+        document.getElementById("answer_formular_5-5").innerHTML = " _______";
+        document.getElementById("answer_formular_5-6").innerHTML = " _______";
+        document.getElementById("answer_formular_5-7").innerHTML = " _______";
+    }
 
 }
 
