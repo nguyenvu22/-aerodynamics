@@ -5,6 +5,9 @@
 .intro-text{
     margin-bottom: 35px;
 }
+.intro-text-box-item{
+    margin-bottom: 10px;
+}
 .intro-text-box{
     text-align: center;
     border: 3px solid #68647db4;
@@ -15,8 +18,12 @@
 .validationn{
     font-weight: 300;
     color: rgba(255, 47, 0, 0.962) !important;
-    display: none;
-    text-align: left;
-    margin-left: 35%;
+    opacity: 0;
 }
 
+.validation4Condition{
+    font-weight: 300;
+    color: rgba(255, 47, 0, 0.962) !important;
+    display: none;
+    margin-bottom: 10px;
+}

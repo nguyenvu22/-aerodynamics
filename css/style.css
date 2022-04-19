@@ -607,7 +607,7 @@ ol {
 	font-size: 15px;
 	font-weight: 500;
 	color: #68647d;
-	margin-bottom: 20px;
+	/* margin-bottom: 20px; */
 }
 
 .text-box .read-more {

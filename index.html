@@ -88,16 +88,16 @@
 							Insentropic Flow
 						</h3>
 						<!-- Input param 1 -->
-						<p>
+						<p class="intro-text-box-item">
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_1-1"><br>
 							<!-- validation (error) -->
-							<span class="validationn" id="valid_1-1">-- Invalid --</span>
+							<p class="validationn" id="valid_1-1">Gamma ∈ ( 1 , 2 ]</p>
 						</p>
 						<!-- Input param 2 -->
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/M.png" alt=""> = <input type="text" id="param_1-2"><br>
 							<!-- validation (error) -->
-							<span class="validationn" id="valid_1-2">-- Invalid --</span>
+							<p class="validationn" id="valid_1-2">M ∈ ( 0 , 5 )</p>
 						</p>
 
 						<button onclick="formular_1()" class="btn btn-success"> Calculate </button>
@@ -121,13 +121,13 @@
 						<h3 style="margin: 30px 0px;">
 							Noninsentropic Flow
 						</h3>
-						<p>
+						<p class="intro-text-box-item">
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_2-1"><br>
-							<span class="validationn" id="valid_2-1">-- Invalid --</span>
+							<p class="validationn" id="valid_2-1">Gamma ∈ ( 1 , 2 ]</p>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/M1.png" alt=""> = <input type="text" id="param_2-2"><br>
-							<span class="validationn" id="valid_2-2">-- Invalid --</span>
+							<p class="validationn" id="valid_2-2">M ∈ ( 1 , 5 )</p>
 						</p>
 
 						<button onclick="formular_2()" class="btn btn-success"> Calculate </button>
@@ -161,22 +161,22 @@
 						<h3 style="margin: 30px 0px;">
 							Pitot tube
 						</h3>
-						<p>
+						<p class="intro-text-box-item">
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_3-1"><br>
-							<span class="validationn" id="valid_3-1">-- Invalid --</span>
+							<p class="validationn" id="valid_3-1">Gamma ∈ ( 1 , 2 ]</p>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/M.png" alt=""> = <input type="text" id="param_3-2"><br>
-							<span class="validationn" id="valid_3-2">-- Invalid --</span>
+							<p class="validationn" id="valid_3-2">M ∈ ( 0 , 5 )</p>
 						</p>
 						<button onclick="formular_3()" class="btn btn-success"> Calculate </button>
 						<!-- M < 1 -->
-						<h6 style="color: yellow; display: none;" id="case_3-1"><br> Subsonic</h6>
+						<h6 style="color: yellow; opacity: 0.3;" id="case_3-1"><br> Subsonic</h6>
 						
 						<!-- M >= 1 -->
-						<h6 style="color: yellow; display: none;" id="case_3-2"><br> Supersonic</h6>
+						<h6 style="color: yellow; opacity: 0.3;" id="case_3-2"><br> Supersonic</h6>
 
-						<p style="margin: 90px 0px 0px 50px; text-align: left;">
+						<p style="margin: 30px 0px 0px 50px; text-align: left;">
 							<img style="width: 25%;" src="./img/answer_3-1.png" alt=""> = <span id="answer_formular_3"> __________ </span>
 						</p>
 					</div>
@@ -184,21 +184,32 @@
 
 				<!-- Case 4 : Oblique Shock Waves -->
 				<div class="intro-text col-md-4">
-					<div style="height: 750px;" class="intro-text-box text-box text-white">
+					<div style="height: 850px;" class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
 							Oblique Shock Waves
 						</h3>
-						<p>
+						<p class="intro-text-box-item">
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_4-1"><br>
-							<span class="validationn" id="valid_4-1">-- Invalid --</span>
+							<p class="validationn" id="valid_4-1">Gamma ∈ ( 1 , 2 ]</p>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/M1.png" alt=""> = <input type="text" id="param_4-2"><br>
-							<span class="validationn" id="valid_4-2">-- Invalid --</span>
+							<div>
+								<!-- Theta >= 22  <=>  M > 2 -->
+								<p class="validation4Condition" id="valid_4-2-1">M > 2 due to Theta ≥ 22</p>
+								<!-- Theta >= 30  <=>  M > 2.5 -->
+								<p class="validation4Condition" id="valid_4-2-2">M > 2.5 due to Theta ≥ 30</p>
+								<!-- Theta >= 34  <=>  M > 3 -->
+								<p class="validation4Condition" id="valid_4-2-3">M > 3 due to Theta ≥ 34</p>
+								<!-- Theta > 40   <=>  M > 4 -->
+								<p class="validation4Condition" id="valid_4-2-4">M > 4 due to Theta > 40</p>
+								<!-- Validation -->
+								<p class="validationn" id="valid_4-2">M ∈ ( 1.8 , 5 ]</p>
+							</div>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_4-3"><br>
-							<span class="validationn" id="valid_4-3">-- Invalid --</span>
+							<p class="validationn" id="valid_4-3">Theta ∈ ( 0° , 41° )</p>
 						</p>
 						
 						<button onclick="formular_4()" class="btn btn-success"> Calculate </button>
@@ -206,6 +217,12 @@
 						<div style="padding: 0px 15px; margin-top: 40px;" class="row">
 							<p class="col-6">
 								<img style="width: 25%;" src="./img/B.png" alt=""> = <span id="answer_formular_4-1"> _______ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 35%;" src="./img/answer_4-3.png" alt=""> = <span id="answer_formular_4-7"> _______ </span>
+							</p>
+							<p class="col-6">
+								<img style="width: 25%;" src="./img/M2.png" alt=""> = <span id="answer_formular_4-8"> _______ </span>
 							</p>
 							<p class="col-6">
 								<img style="width: 35%;" src="./img/answer_4-1.png" alt=""> = <span id="answer_formular_4-2"> _______ </span>
@@ -228,21 +245,21 @@
 				
 				<!-- Case 5 : Expansion Wave -->
 				<div class="intro-text col-md-4">
-					<div style="height: 750px;" class="intro-text-box text-box text-white">
+					<div style="height: 850px;" class="intro-text-box text-box text-white">
 						<h3 style="margin: 30px 0px;">
 							Expansion Wave
 						</h3>
-						<p>
+						<p class="intro-text-box-item">
 							<img style="width: 15%;" src="./img/gamma.png" alt=""> = <input type="text" id="param_5-1"><br>
-							<span class="validationn" id="valid_5-1">-- Invalid --</span>
+							<p class="validationn" id="valid_5-1">Gamma ∈ ( 1 , 2 ]</p>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/M1.png" alt=""> = <input type="text" id="param_5-2"><br>
-							<span class="validationn" id="valid_5-2">-- Invalid --</span>
+							<p class="validationn" id="valid_5-2">M > 1</p>
 						</p>
-						<p>
+						<p class="intro-text-box-item">
 							<img src="./img/Tetaa.png" alt=""> = <input type="text" id="param_5-3"><br>
-							<span class="validationn" id="valid_5-3">-- Invalid --</span>
+							<p class="validationn" id="valid_5-3">Theta ∈ ( 0° , 90° )</p>
 						</p>
 
 						<button onclick="formular_5()" class="btn btn-success"> Calculate </button>
