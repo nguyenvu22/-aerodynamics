@@ -128,8 +128,8 @@ function formular_3(){
 
 function formular_4(){
     var param1 = +document.getElementById("param_4-1").value;       //1 < Y <= 2
-    var param2 = +document.getElementById("param_4-2").value;       //M1 > 1 ( > 1.8) <= 5
-    var param3 = +document.getElementById("param_4-3").value;       //0 < Thetaa < 41
+    var param2 = +document.getElementById("param_4-2").value;       //M1 > 1.8 && M1 <= 5
+    var param3 = +document.getElementById("param_4-3").value;       //-40 <= Thetaa < 41
 
     if(param1 <= 1 || param1 > 2){
         document.getElementById("valid_4-1").style.opacity = 1;
@@ -172,13 +172,13 @@ function formular_4(){
         document.getElementById("valid_4-2-4").style.display = "none";
     }
 
-    if(param3 <= 0 || param3 >= 41){
+    if(param3 < -40 || param3 >= 41){
         document.getElementById("valid_4-3").style.opacity = 1;
     }else{
         document.getElementById("valid_4-3").style.opacity = 0;
     }
 
-    if(param1 > 1 && param1 <= 2 && param2 > 1.8 && param2 <= 5 && param3 > 0 && param3 < 41 && checkCondition === true){
+    if(param1 > 1 && param1 <= 2 && param2 > 1.8 && param2 <= 5 && param3 >= -40 && param3 < 41 && checkCondition === true){
         var landa = Math.sqrt( Math.pow((param2*param2 - 1), 2) - 3*(1+((param1-1)/2)*param2*param2)*(1+((param1+1)/2)*param2*param2)*Math.pow(Math.tan(param3*Math.PI/180), 2) );
         
         var x = ( Math.pow((param2*param2-1), 3) - 9 * (1+((param1-1)/2)*param2*param2) * ( 1+((param1-1)/2)*param2*param2+(Math.pow(param2, 4)*((param1+1)/4)) ) * Math.pow(Math.tan(param3*Math.PI/180), 2) ) / (Math.pow(landa, 3));
