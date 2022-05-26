@@ -137,7 +137,7 @@ function formular_4(){
         document.getElementById("valid_4-1").style.opacity = 0;
     }
 
-    if(param2 <= 1.8 || param2 > 5){
+    if(param2 < 1 || param2 > 5){
         document.getElementById("valid_4-2").style.opacity = 1;
     }else{
         document.getElementById("valid_4-2").style.opacity = 0;
@@ -178,7 +178,13 @@ function formular_4(){
         document.getElementById("valid_4-3").style.opacity = 0;
     }
 
-    if(param1 > 1 && param1 <= 2 && param2 > 1.8 && param2 <= 5 && param3 >= -40 && param3 < 41 && checkCondition === true){
+    if(param3 === 0){
+        document.getElementById("param_4-3").value = 0;
+    }else{
+        document.getElementById("param_4-3").value = "";
+    }
+
+    if(param1 > 1 && param1 <= 2 && param2 >= 1 && param2 <= 5 && param3 >= -40 && param3 < 41 && checkCondition === true){
         var landa = Math.sqrt( Math.pow((param2*param2 - 1), 2) - 3*(1+((param1-1)/2)*param2*param2)*(1+((param1+1)/2)*param2*param2)*Math.pow(Math.tan(param3*Math.PI/180), 2) );
         
         var x = ( Math.pow((param2*param2-1), 3) - 9 * (1+((param1-1)/2)*param2*param2) * ( 1+((param1-1)/2)*param2*param2+(Math.pow(param2, 4)*((param1+1)/4)) ) * Math.pow(Math.tan(param3*Math.PI/180), 2) ) / (Math.pow(landa, 3));
@@ -237,7 +243,7 @@ function calcNewM2(oldM2, theta, vM1, Y){
 function formular_5(){
     var param1 = +document.getElementById("param_5-1").value;       //1 < Y <= 2
     var param2 = +document.getElementById("param_5-2").value;       //M1 > 1
-    var param3 = +document.getElementById("param_5-3").value;       //0 < Thetaa < 90
+    var param3 = +document.getElementById("param_5-3").value;       //-90 < Thetaa < 90
 
     if(param1 <= 1 || param1 > 2){
         document.getElementById("valid_5-1").style.opacity = 1;
@@ -251,13 +257,13 @@ function formular_5(){
         document.getElementById("valid_5-2").style.opacity = 0;
     }
 
-    if(param3 <= 0 || param3 >= 90){
+    if(param3 <= -90 || param3 >= 90){
         document.getElementById("valid_5-3").style.opacity = 1;
     }else{
         document.getElementById("valid_5-3").style.opacity = 0;
     }
 
-    if(param1 > 1 && param1 <= 2 && param2 > 1 && param3 > 0 && param3 < 90){
+    if(param1 > 1 && param1 <= 2 && param2 > 1 && param3 > -90 && param3 < 90){
         var u1 = Math.asin(1/param2) * 180/Math.PI;
         var vM1 = (Math.sqrt((param1+1)/(param1-1)) * Math.atan( Math.sqrt(((param1-1)/(param1+1)) * (param2*param2-1)) )) - Math.atan(Math.sqrt(param2*param2-1));
         var vM2 = param3 + vM1*180/Math.PI;
